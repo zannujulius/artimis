@@ -1,0 +1,29 @@
+name: NASA Project CI
+# on making a push to github
+on:
+  push:
+    # select the branch
+    branches: [main]
+    # when a pull request is made to the branch
+  pull_request:
+    branches: [main]
+    # create your job
+jobs:
+  # the list of jobs you want to define
+  # build the project
+  build:
+    # OS to run on
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node version 16
+        uses: actions/setup-node@v2
+        with:
+          node-version: "16"
+      - run: npm install
+      - run: npm run build --prefix client
+
+  # then deploy
+  # deploy:
+  # only run the deploy until the build is complete
+  # needs: build
