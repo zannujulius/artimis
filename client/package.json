@@ -10,8 +10,8 @@
     "react-scripts": "^5.0.0"
   },
   "scripts": {
-    "start": "CI=false && react-scripts start",
-    "build": "BUILD_PATH=../server/public react-scripts build",
+    "start": "react-scripts start",
+    "build": "CI=false && BUILD_PATH=../server/public react-scripts build",
     "test": "react-scripts test --passWithNoTests",
     "eject": "react-scripts eject"
   },
